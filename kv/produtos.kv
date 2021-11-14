@@ -1,0 +1,35 @@
+<Produtos>:
+    FloatLayout:        
+        ImageButton:
+            pos_hint: {"right": 0.19, "top": 1}
+            size_hint: 0.25, 0.1
+            source: "icones/back.png"
+            on_release: app.mudar_tela("homepage")
+        ScrollView:
+            pos_hint: {"right": 1, "top": 0.65}
+            size_hint: 1, 0.65
+            spacing: 3, 3
+            GridLayout:
+                rows: 3
+                cols: 2
+                id: listaprodutos
+                size_hint_y: None
+                height: self.minimum_height
+                row_default_height: "90dp"
+                row_force_default: True
+                ImageButton:
+                    source: "icones/produtos/tela1.png"
+                    on_release: app.mudar_tela("tela1")
+                ImageButton:
+                    source: "icones/produtos/tela2.png"
+                    on_release: app.mudar_tela("tela2")
+                ImageButton:
+                    source: "icones/produtos/tela3.png"
+                    on_release: app.mudar_tela("tela3")
+                ImageButton:
+                    source: "icones/produtos/tela4.png"
+                    on_release: app.mudar_tela("tela4")
+                ImageButton:
+                    source: "icones/produtos/tela5.png"
+                    on_release: app.mudar_tela("tela5")
+                

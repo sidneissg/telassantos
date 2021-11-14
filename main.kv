@@ -1,0 +1,74 @@
+#:include kv/homepage.kv 
+#:include kv/cadastro.kv 
+#:include kv/agendamento.kv 
+#:include kv/sobre.kv 
+#:include kv/produtos.kv
+#:include kv/conta.kv
+#:include kv/mudarfoto.kv
+#:include kv/tela1.kv
+#:include kv/tela2.kv 
+#:include kv/tela3.kv 
+#:include kv/tela4.kv 
+#:include kv/tela5.kv 
+#:include kv/login.kv
+#:include kv/contatospage.kv
+
+
+FloatLayout:     
+    canvas:
+        Color:
+            rgb: (1, 1, 1, 0)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    Image:
+        pos_hint: {"right": 1, "top": 0.95}
+        size_hint: 1, 0.25
+        source: "icones/perfil/logo.png"
+        id: foto_perfil
+    ScreenManager:
+        pos_hint: {"right": 1, "top": 1}
+        size_hint: 1, 1
+        id: screen_manager
+        Login:
+            name: "login"
+            id: login
+        HomePage:
+            name: "homepage"
+            id: homepage
+        Agendamento:
+            name: "agendamento"
+            id: agendamento
+        Cadastro:
+            name: "cadastro"
+            id: cadastro
+        Sobre:
+            name: "sobre"
+            id: sobre
+        Produtos:
+            name: "produtos"
+            id: produtos
+        Conta:
+            name: "conta"
+            id: conta
+        MudarFoto:
+            name: "mudarfoto"
+            id: mudarfoto
+        Tela1:
+            name: "tela1"
+            id: tela1
+        Tela2:
+            name: "tela2"
+            id: tela2
+        Tela3:
+            name: "tela3"
+            id: tela3
+        Tela4:
+            name: "tela4"
+            id: tela4
+        Tela5:
+            name: "tela5"
+            id: tela5
+        ContatosPage:
+            name: "contatospage"
+            id: contatospage

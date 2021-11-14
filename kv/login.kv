@@ -1,0 +1,54 @@
+<Login>:
+    FloatLayout:
+    
+        Label:
+            color: (0, 0, 0, 1)
+            pos_hint: {"right": 1, "top": 0.75}
+            size_hint: 1, 0.2
+            bold: True
+            text: "Telas Santos"
+         
+        TextInput:
+            id: email
+            hint_text: "E-mail"
+            pos_hint: {"right": 0.9, "top": 0.6}
+            size_hint: 0.8, 0.1
+            font_size: 35
+        TextInput:
+            id: senha
+            password: True
+            hint_text: "Senha"
+            pos_hint: {"right": 0.9, "top": 0.45}
+            size_hint: 0.8, 0.1
+            font_size: 35
+        Label:
+            color: (0, 0, 0, 1)
+            pos_hint: {"right": 1, "top": 0.4}
+            size_hint: 1, 0.2
+            bold: True
+            text: "Faça seu login"
+            id: mensagem_login
+        LabelButton:
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    source: "icones/botao.png" if self.state == "normal" else "icones/botao_apertado.png"
+            pos_hint: {"right": 0.5, "top": 0.3}
+            size_hint: 0.45, 0.2
+            bold: True
+            text: "Login"
+            on_release: app.firebase.fazer_login(email.text, senha.text)
+
+        LabelButton:
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    source: "icones/botao.png" if self.state == "normal" else "icones/botao_apertado.png"
+            pos_hint: {"right": 0.95, "top": 0.3}
+            size_hint: 0.45, 0.2
+            bold: True
+            text: "Criar Conta"
+            on_release: app.firebase.criar_conta(email.text, senha.text)
+            

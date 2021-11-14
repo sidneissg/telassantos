@@ -1,0 +1,27 @@
+<MudarFoto>:
+    FloatLayout:
+            
+        ImageButton:
+            pos_hint: {"right": 0.19, "top": 1}
+            size_hint: 0.25, 0.1
+            source: "icones/back.png"
+            on_release: app.mudar_tela("homepage")
+        Label:
+            color: (0, 0, 0, 1)
+            pos_hint: {"right": 1, "top": 0.75}
+            size_hint: 1, 0.2
+            bold: True
+            text: "Selecionar foto"
+        ScrollView:
+            pos_hint: {"right":0.8, "top": 0.5}
+            size_hint: 0.6, 0.5
+            GridLayout:
+                id: lista_fotos_perfil
+                cols: 3
+                size_hint_y: None
+                spacing: 5, 5
+                height: self.minimum_height
+                row_default_height: "90dp"
+                row_force_default: True
+        
+            

@@ -1,0 +1,51 @@
+<HomePage>:
+    FloatLayout:
+
+        
+    
+        Label:
+            color: (0, 0, 0, 1)
+            pos_hint: {"right": 1, "top": 0.75}
+            size_hint: 1, 0.2
+            border: True
+            text: "Sidnei Senciani Gomes"
+            id: nome_cliente        
+        GridLayout:
+            pos_hint: {"right": 0.9, "top": 0.5}
+            size_hint: 0.8, 0.5
+            rows: 2
+            cols: 2
+            LabelButton:
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: "icones/botao.png" if self.state=="normal" else "icones/botao_apertado.png"
+                
+                text: "Agendamento"
+                on_release: app.mudar_tela("agendamento")
+            LabelButton:
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: "icones/botao.png" if self.state=="normal" else "icones/botao_apertado.png"
+                text: "Cadastro"
+                on_release: app.mudar_tela("conta")
+            LabelButton:
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: "icones/botao.png" if self.state=="normal" else "icones/botao_apertado.png"
+                on_release: app.mudar_tela("produtos")
+                text: "Produtos"
+            LabelButton:
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: "icones/botao.png" if self.state=="normal" else "icones/botao_apertado.png"    
+                text: "Sobre"
+                on_release: app.mudar_tela("sobre")
+            
