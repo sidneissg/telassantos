@@ -58,3 +58,5 @@ class ContatosPage(Screen):
     pass
 
 
+class PedidoFeito(Screen):
+    pass

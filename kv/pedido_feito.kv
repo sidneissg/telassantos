@@ -1,0 +1,28 @@
+<PedidoFeito>:
+    FloatLayout:
+        ImageButton:
+            pos_hint: {"right": 0.19, "top": 1}
+            size_hint: 0.25, 0.1
+            source: "icones/back.png"
+            on_release: app.mudar_tela("homepage")
+        Image:
+            pos_hint: {"right": 0.95, "top": 0.55}
+            size_hint: 0.9, 0.35
+            source: "icones/produtos/certo.png"
+        Label:
+            color: (0, 0, 0, 1)
+            pos_hint: {"right": 1, "top": 0.75}
+            size_hint: 1, 0.2
+            border: True
+            text: "Pedido realizado, em breve entraremos em contato."
+        LabelButton:
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    source: "icones/botao.png" if self.state=="normal" else "icones/botao_apertado.png"
+            pos_hint: {"right": 0.7, "top": 0.2}
+            size_hint: 0.4, 0.1
+            text: "Ok"
+            on_release: app.mudar_tela("homepage")
+                

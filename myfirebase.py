@@ -2,6 +2,7 @@ import requests
 from kivy.app import App
 
 
+
 class MyFireBase():
     API_KEY = "AIzaSyCHjLLyypnUPXZX10cJHyXU6KiWmNTD-YE"
     
@@ -128,3 +129,8 @@ class MyFireBase():
         local_id = requisicao_dic["user_id"]
         id_token = requisicao_dic["id_token"]
         return local_id, id_token
+    
+
+    # def recuperar_senha(self, email):
+    #     user = auth.get_user_by_email(email)
+    #     print('Successfully fetched user data: {0}'.format(user.uid))

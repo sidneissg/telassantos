@@ -7,6 +7,7 @@ import os
 from functools import partial
 from myfirebase import MyFireBase
 import cgi
+import time
 
 GUI = Builder.load_file("main.kv")
 class MainApp(App):
@@ -101,22 +102,27 @@ class MainApp(App):
         preco = str(preco.replace(".",","))
         total.text = f"R$ {preco}"
     
-        if mensagem != "":
-            self.mudar_tela(tela)
-            mensagem.text = "Os campos são obrigatórios"
+        # if mensagem != "":
+        #     self.mudar_tela(tela)
+        #     mensagem.text = "Os campos são obrigatórios"
             
             
             
     
-    def enviar_pedido(self, cor, produto, quantidade):
-        quantidade = quantidade.replace(",",".")
+    def enviar_pedido(self, cor, produto, altura, largura):
+        if altura == "":
+            altura = 60
+        if largura == "":
+            largura = 90
         if cor == "branca":
-            total = float(quantidade) * 90
+            total = float(altura)/ 100 * float(largura)/ 100 * 90 
         elif cor == "inox":
-            total = float(quantidade) * 90
-        info = f'{{"produto": "{produto}", "quantidade": "{quantidade}", "total": "{total:.2f}"}}'
+            total = float(altura)/ 100 * float(largura)/ 100 * 90
+        info = f'{{"produto": "{produto}", "altura": "{altura}", "largura": "{largura}", "total": "{total:.2f}"}}'
         requests.patch(f"https://telassantos-default-rtdb.firebaseio.com/{self.local_id}/pedidos.json", data=info)
-        self.mudar_tela("homepage")
+        self.mudar_tela("pedido_feito")
         
+    
+   
         
 MainApp().run()

@@ -23,11 +23,19 @@
             font_size: 35
         Label:
             color: (0, 0, 0, 1)
-            pos_hint: {"right": 1, "top": 0.4}
-            size_hint: 1, 0.2
+            pos_hint: {"right": 1, "top": 0.1}
+            size_hint: 1, 0.1
             bold: True
-            text: "Faça seu login"
+            text: ""
             id: mensagem_login
+        LabelButton:
+            color: (0, 0, 0, 1)
+            pos_hint: {"right": 1, "top": 0.35}
+            size_hint: 1, 0.1
+            bold: True
+            text: "Esqueci a senha"
+            id: recuperar_senha
+            on_release: app.firebase.recuperar_senha(email.text)
         LabelButton:
             canvas.before:
                 Rectangle:
